@@ -1,0 +1,6 @@
+ <!-- <label for="vend_id"class="vend_id" >Vendor ID</label>
+                    <input type="text" name="txtVend_id" id="vend_id" placeholder="Vendor ID" 
+                        value="<?php if(isset($vend_id)) echo $vend_id; ?>">
+                        <span id="errormsgvend_id" class="error">
+                            <?php (!empty($errormsgvend_id)) && print($errormsgvend_id)?>
+                        </span> -->
