@@ -31,9 +31,10 @@
     ?>
 </header>
 <main>
-        <input type="hidden" name="page" id="insert" value="insert">
-            <a href="view/insertForm.php?_hidden_value=insert">Add a New Product</a>
-            
+       
+            <a href="./index.php?action=insert">Add a New Product</a>
+        
+    
         <table class="department-table">
             <thead>
                 <tr>

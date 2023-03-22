@@ -12,7 +12,7 @@
     <header>
         <h1>Lawyer Project 7</h1>
         <?php
-            include'../model/fetch.php';
+         //   include('../model/fetch.php');
            $fetchVendors =  fetchVendors();
 
             // if the submit button has not been clicked it sets the error messages to empty strings
@@ -75,7 +75,7 @@
                     <label for="vend_name"class="vend_name" >Vendor</label>
                         <select name='txtVend_id'>
                             <?php 
-                                foreach ($results2 as $vendor): ?>
+                                foreach ($fetchVendors as $vendor): ?>
                                     <option value="<?php echo $vendor['vend_id']; ?>"
                                         <?php if($vend_name == $vendor['vend_name']) echo 'selected'; 
                                               else if(isset($_POST['txtVend_id']) && $_POST['txtVend_id'] == $vendor['vend_id']) echo 'selected="selected"'
@@ -119,7 +119,8 @@
                 </div>
         </form>
 
-        <a href="index.php">Home Page</a>
+                <input type="hidden" name="acton" id="tableView" value="tableView">
+                    <a href="../index.php">Home Page</a>
     </main>
     <footer>
 
