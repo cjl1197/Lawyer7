@@ -12,7 +12,8 @@
     <header>
         <h1>Lawyer Project 7</h1>
         <?php
-            require_once 'fetchVendors.php';
+            include'../model/fetch.php';
+           $fetchVendors =  fetchVendors();
 
             // if the submit button has not been clicked it sets the error messages to empty strings
               if (!isset($_POST['btnSubmit'])) {
@@ -49,7 +50,7 @@
                 $vend_id = '';
             }
         
-             foreach ($results2 as $vendor) {
+             foreach ($fetchVendors as $vendor) {
                         if ($vendor['vend_id'] == $vend_id)
                             $vend_name = $vendor['vend_name'];
                     }

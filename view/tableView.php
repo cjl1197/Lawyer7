@@ -22,8 +22,8 @@
     </script>
     <?php
     
-        //require_once 'model/dbconnect.php'; // db connection 
-        //require_once 'model/fetch.php'; // fetch request for product data
+        require('model/dbconnect.php'); // db connection 
+        //require('model/fetch.php'); // fetch request for product data
         $fetchAll = fetch();
         //require_once 'model/fetchVendors.php'; // fetch request for vendors data
         $fetchVendors = fetchVendors();
