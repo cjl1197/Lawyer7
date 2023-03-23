@@ -104,11 +104,15 @@
     }
    else if(isset($_POST['update'])) {
         if ($prod_id_valid AND $vend_id_valid AND $prod_name_valid AND $prod_price_valid AND $prod_desc_valid){
-           include('update.php');
+            require('update.php');
+           updateProducts($prod_id);
+           header('Location: ../index.php');
         }
         else
-
-            include('../insertForm.php');
+            // require('fetch.php');
+            // require('../styles/styles.css');
+            
+            header('Location: ../index.php');
    }
     else if (isset($_POST['prod_id'])) {
         include('delete.php');

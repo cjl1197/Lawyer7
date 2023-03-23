@@ -1,8 +1,12 @@
 <?php
-            require_once 'dbconnect.php';
-            require_once '../fetchVendors.php';
+            require('dbconnect.php');
+            // require('fetch.php');
 
-            $id = $_POST['prod_id'];
+           // $id = $_POST['prod_id'];
+
+            function updateProducts ($product_id) {
+
+            global $pdo;
 
             $prod_id = filter_var($_POST['txtProd_id'], FILTER_SANITIZE_STRING);
             $vend_id = filter_var($_POST['txtVend_id'], FILTER_SANITIZE_STRING);
@@ -20,7 +24,7 @@
             $statement->execute();
            //$results = $statement->fetchAll();
             $statement->closeCursor();
-            include '../index.php';
+            //include './index.php';
             }
             catch (PDOException $e) {
                 $error  = 'Something went wrong';
@@ -29,7 +33,7 @@
                 die();
             }
                 
-                
+            }        
                 
         
 ?>

@@ -12,7 +12,7 @@
     <header>
         <h1>Lawyer Project 7</h1>
         <?php
-         //   include('../model/fetch.php');
+        // include('../model/fetch.php');
            $fetchVendors =  fetchVendors();
 
             // if the submit button has not been clicked it sets the error messages to empty strings
@@ -120,7 +120,7 @@
         </form>
 
                 <input type="hidden" name="acton" id="tableView" value="tableView">
-                    <a href="../index.php">Home Page</a>
+                    <a href="./index.php">Home Page</a>
     </main>
     <footer>
 

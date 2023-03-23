@@ -21,4 +21,8 @@
         include('./view/insertForm.php');
    }
 
+   else if ($action == 'update') {
+        include('./view/insertForm.php');
+   }
+
 ?>

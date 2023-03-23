@@ -52,7 +52,7 @@
             <tbody>
                     <?php foreach ($fetchAll as $row) {  
                         echo "<tr>";
-                        echo "<form method='post' action='insertForm'>";
+                        echo "<form method='post' action='./index.php'>";
                         echo "<td>" . $row['prod_id'] . "</td>";
                             foreach ($fetchVendors as $vendor) {
                                 if ($row['vend_id'] == $vendor['vend_id']){
@@ -65,7 +65,7 @@
                         echo "<td>" . '$' . $row['prod_price'] . "</td>";
                         echo "<td>" . $row['prod_desc'] . "</td>";
                         echo "<td>";
-                        echo "<button type='submit' name='update'>Update</button>";
+                        echo "<button type='submit' name='action' value='update'>Update</button>";
                         echo "<input type='hidden' name='page' value='update'>";
                         echo "<input type='hidden' name='txtProd_id' value='" . $row['prod_id'] . "'>";
                         echo "<input type='hidden' name='txtVend_id' value='" . $row['vend_id'] . "'>";

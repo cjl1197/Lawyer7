@@ -1,6 +1,6 @@
 <?php
             require_once 'dbconnect.php';
-            require_once '../fetchVendors.php';
+           // require_once '../fetchVendors.php';
 
 
             $prod_id = filter_var($_POST['txtProd_id'], FILTER_SANITIZE_STRING);
