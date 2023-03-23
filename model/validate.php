@@ -20,6 +20,8 @@
         $prod_desc_valid = false;
         $vend_name_valid = false;
 
+      
+
         
         // $options = array(
         //     'min_range' => 100000,
@@ -99,23 +101,27 @@
 
             include('insert.php');
         else
-
-            include('../insertForm.php');
+            require('fetch.php');
+            include('../view/insertForm.php');
     }
    else if(isset($_POST['update'])) {
         if ($prod_id_valid AND $vend_id_valid AND $prod_name_valid AND $prod_price_valid AND $prod_desc_valid){
             require('update.php');
-           updateProducts($prod_id);
-           header('Location: ../index.php');
+            updateProducts($prod_id);
+            header('Location: ../index.php');
         }
         else
-            // require('fetch.php');
-            // require('../styles/styles.css');
+          $notValid = true;
+            require('fetch.php');
+            include("../view/insertForm.php");
             
-            header('Location: ../index.php');
    }
     else if (isset($_POST['prod_id'])) {
-        include('delete.php');
+     
+       // include('delete.php');
+       require('delete.php');
+       deleteProduct($prod_id);
+       header('Location: ../index.php');
     }
 
 ?>

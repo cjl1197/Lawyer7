@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insert</title 255>
-    <link rel='stylesheet' href='styles/insertForm.css' type='text/css'>
+    <base href="http://localhost:8080/Lawyer7/" />
+    <link rel="stylesheet" href="styles/insertForm.css">
+
     
 </head>
 <body>
@@ -22,9 +24,11 @@
             $errormsgvend_id = '';
             $errormsgprod_price = '';
             $errormsgprod_desc = '';
+            $notValid = false;
             }
+         
+      
 
-            
             if (isset($_POST['page'])){ 
             $page = $_POST['page'];
             }
@@ -120,7 +124,7 @@
         </form>
 
                 <input type="hidden" name="acton" id="tableView" value="tableView">
-                    <a href="./index.php">Home Page</a>
+                    <a href="index.php">Home Page</a>
     </main>
     <footer>
 

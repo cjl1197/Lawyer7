@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="http://localhost:8080/Lawyer7/" />
     <link rel='stylesheet' href='styles/styles.css' type='text/css'>
     <!-- <link rel='validate' href='../model/validate.php'> -->
     <title>Lawyer 7</title>
@@ -27,17 +28,18 @@
         $fetchAll = fetch();
         //require_once 'model/fetchVendors.php'; // fetch request for vendors data
         $fetchVendors = fetchVendors();
-   
+        $number = 0;
     ?>
 </header>
 <main>
        
-            <a href="./index.php?action=insert">Add a New Product</a>
+            <a href="index.php?action=insert">Add a New Product</a>
         
     
         <table class="department-table">
             <thead>
                 <tr>
+                    <th class="numberOfProducts">#</th>
                     <th>Product ID</th>
                     <th>Vendor Name</th>
                     <th>Vendor ID</th>
@@ -51,8 +53,10 @@
 
             <tbody>
                     <?php foreach ($fetchAll as $row) {  
+                        $number = $number + 1;
                         echo "<tr>";
                         echo "<form method='post' action='./index.php'>";
+                        echo "<td>" . $number . "</td>";
                         echo "<td>" . $row['prod_id'] . "</td>";
                             foreach ($fetchVendors as $vendor) {
                                 if ($row['vend_id'] == $vendor['vend_id']){
@@ -82,6 +86,8 @@
                        
                         echo "</td>";
                         echo "</tr>";
+
+                        
                     }
             ?>
 

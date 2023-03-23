@@ -3,7 +3,7 @@
     $dsn = 'mysql:host=localhost:3306;dbname=crashcourse';
 
     $username = 'root';
-    $password = 'root';
+    $password = '';
 
     try {
         $pdo = new PDO($dsn, $username, $password);

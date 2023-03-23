@@ -3,19 +3,23 @@
             //require_once 'index.php';
 
             
-          
-            $id = $_POST['prod_id'];
+            function deleteProduct ($product_id) {
 
-            
+           // $id = $_POST['prod_id'];
+           
+
+            global $pdo;
 
            $sqlDelete = "DELETE FROM products WHERE prod_id = :prod_id";
 
             try {
             $statement = $pdo->prepare($sqlDelete);
-            $statement->execute(['prod_id' => $id]);
+            $statement->execute(['prod_id' => $product_id]);
             // $results = $statement->fetchAll();
             $statement->closeCursor();
-            include '../index.php';
+            //include '../index.php';
+
+      
             }
             catch (PDOException $e) {
                 $error  = 'Something went wrong';
@@ -25,6 +29,6 @@
             }
                 
                 
-                
+        }      
         
 ?>
