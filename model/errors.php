@@ -1,3 +1,12 @@
+<?php
+    if (isset($_GET['message'])) 
+        $error_message = $_GET['message'];
+    else 
+        $error_message = 'An unknown error occurred';
+        // do something with the error message
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +25,7 @@
 <body>
     <h2 style="background-color: #d3d3d3">Something went wrong</h2>
     <p style="background-color: #d3d3d3"><?php echo "Unable to connect to the database server" ?></p>
-    <a href="http://localhost/Lawyer6" >Home</a>
+    <p><?php echo $error_message ?></p>
+    <a href="http://localhost:8080/Lawyer7" >Home</a>
 </body>
 </html>

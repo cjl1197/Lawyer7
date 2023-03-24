@@ -1,6 +1,7 @@
 <?php
     require('model/dbconnect.php');
     require('model/fetch.php');
+    require('model/fetchVendors.php');
 
     $action = filter_input(INPUT_POST, 'action');
 
@@ -24,6 +25,7 @@
    else if ($action == 'update') {
         include('./view/insertForm.php');
    }
+
 
 ?>
 

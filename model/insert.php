@@ -1,7 +1,9 @@
 <?php
-            require_once 'dbconnect.php';
-           // require_once '../fetchVendors.php';
+        require_once 'dbconnect.php';
 
+        function addProduct($product_id) {
+
+            global $pdo;
 
             $prod_id = filter_var($_POST['txtProd_id'], FILTER_SANITIZE_STRING);
             $vend_id = filter_var($_POST['txtVend_id'], FILTER_SANITIZE_STRING);
@@ -17,7 +19,7 @@
             $statement = $pdo->prepare($sqlInsert);
             $statement->execute();
             $statement->closeCursor();
-            include '../index.php';
+            //include '../index.php';
             }
             catch (PDOException $e) {
                 $error  = 'Something went wrong';
@@ -25,6 +27,7 @@
                 include 'errors.php';
                 die();
             }
+        }
                 
                 
                 

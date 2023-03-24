@@ -13,7 +13,7 @@
     catch (PDOException $e) {
         $error  = 'Unable to connect to the department database';
         $exceptionError = $e->getMessage();
-        include 'errors.php';
+        header("Location: errors.php?message=".urlencode($exceptionError));
         die();
     }
 

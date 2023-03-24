@@ -13,13 +13,14 @@
 <header>
     <h1>Lawyer Project 7</h1>
      <script>
-        // function to confirm deletion by the user
+       // function to confirm deletion by the user
         function confirmDelete(button) {
             var id = button.getAttribute('data-product-id');
             var name = button.getAttribute('data-product-name');
             
             return confirm("Are you sure you want to delete Product: " + name + ' ID: ' + id + '?');
         }
+
     </script>
     <?php
     
@@ -79,11 +80,10 @@
                         echo "</form>";
                         echo "</td>";
                         echo "<td>";
-                        echo "<form method='post' action='model/validate'>";
-                        echo "<input type='hidden' name='prod_id' value='" . $row['prod_id'] . "'>";
+                        echo "<form method='post' action='./model/validate.php'>";
+                        echo "<input type='hidden' name='product_id' value='" . $row['prod_id'] . "'>";
                         echo "<button type='submit' onclick='return confirmDelete(this);' data-product-id='" . $row['prod_id'] . "' data-product-name='" . $row['prod_name'] . "' name='delete'>Delete</button>";
                         echo "</form>";
-                       
                         echo "</td>";
                         echo "</tr>";
 

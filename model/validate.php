@@ -4,7 +4,6 @@
        
         $submitted = true;
         
-
         $prod_id = filter_var($_POST['txtProd_id'], FILTER_SANITIZE_STRING);
         $vend_id = filter_var($_POST['txtVend_id'], FILTER_VALIDATE_INT);
         $prod_name = filter_var($_POST['txtProd_name'], FILTER_SANITIZE_STRING);
@@ -97,31 +96,40 @@
     }
    
     if(isset($_POST['insert'])) {
-        if ($prod_id_valid AND $vend_id_valid AND $prod_name_valid AND $prod_price_valid AND $prod_desc_valid)
-
-            include('insert.php');
-        else
-            require('fetch.php');
-            include('../view/insertForm.php');
-    }
-   else if(isset($_POST['update'])) {
         if ($prod_id_valid AND $vend_id_valid AND $prod_name_valid AND $prod_price_valid AND $prod_desc_valid){
-            require('update.php');
-            updateProducts($prod_id);
+
+            //include('insert.php');
+            require('insert.php');
+            addProduct($prod_id);
             header('Location: ../index.php');
         }
         else
-          $notValid = true;
             require('fetch.php');
-            include("../view/insertForm.php");
-            
-   }
-    else if (isset($_POST['prod_id'])) {
-     
-       // include('delete.php');
+            require('fetchVendors.php');
+            include('../view/insertForm.php');
+    }
+    else if(isset($_POST['update'])) {
+            if ($prod_id_valid AND $vend_id_valid AND $prod_name_valid AND $prod_price_valid AND $prod_desc_valid){
+                require('update.php');
+                updateProducts($prod_id);
+                header('Location: ../index.php');
+            }
+            else
+            $notValid = true;
+                require('fetch.php');
+                require('fetchVendors.php');
+                include("../view/insertForm.php");
+                
+    }
+    else if (isset($_POST['product_id'])) {
+        // echo 'valid';
+
        require('delete.php');
-       deleteProduct($prod_id);
+       deleteProduct($_POST['product_id']);
        header('Location: ../index.php');
     }
+    else
+       echo 'error';
+    
 
 ?>
