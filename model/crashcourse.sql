@@ -1,4 +1,4 @@
-CREATE TABLE crashcourse.vendors (
+CREATE TABLE vendors (
 vend_id      	int      		NOT NULL AUTO_INCREMENT,
 vend_name    	char(50) 	NOT NULL ,
 vend_address 	char(50) 	NULL ,
@@ -9,7 +9,7 @@ vend_country 	char(50) 	NULL ,
 PRIMARY KEY (vend_id)
 ) ENGINE=InnoDB;
 
-CREATE TABLE crashcourse.products(
+CREATE TABLE products(
 prod_id    		char(10)	NOT NULL,
 vend_id    		int           	NOT NULL,
 prod_name  	char(255)     	NOT NULL ,
@@ -18,6 +18,6 @@ prod_desc  	text          	NULL ,
 PRIMARY KEY(prod_id)
 ) ENGINE=InnoDB;
 
-ALTER TABLE crashcourse.products ADD CONSTRAINT 
+ALTER TABLE products ADD CONSTRAINT 
                 fk_products_vendors FOREIGN KEY (vend_id) 
-                REFERENCES crashcourse.vendors (vend_id);
+                REFERENCES vendors (vend_id);
